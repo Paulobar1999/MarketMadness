@@ -61,7 +61,7 @@ public class SampleController {
     private TextField totalAssets;//totalAsset
 
     @FXML
-    private TextField numVar;// number varience
+    private TextField numVar;// number variance
 
     @FXML
     private TextField numChart; // number of chart
@@ -86,6 +86,13 @@ public class SampleController {
 
     @FXML
     private TextField oStock;// amount of orange shares
+    
+    
+    @FXML
+    private Button f_quitbtn;// the quit button for the fail scene
+
+    @FXML
+    private Button agnBtn;// play again button on the fail scene
 
 
     @FXML // the action button for the play button
