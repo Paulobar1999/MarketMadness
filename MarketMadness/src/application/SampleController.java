@@ -61,13 +61,12 @@ public class SampleController {
     private TextField totalAssets;//totalAsset
 
     @FXML
-    private TextField numVar;// number variance
+    private TextField tCash;// total of cash
 
     @FXML
-    private TextField numChart; // number of chart
+    private TextField tStock;// total of stocks
+	
 
-    @FXML
-    private TextField tItems;//total items
 
     @FXML
     private TextField Gshares;// number green shares 

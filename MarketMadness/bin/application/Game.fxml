@@ -13,7 +13,7 @@
    <children>
       <Button fx:id="d_bank" layoutX="36.0" layoutY="720.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="165.0" text="Declare Bankruptcy" />
       <Button fx:id="G_start" layoutX="35.0" layoutY="671.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="165.0" text="Start" />
-      <LineChart fx:id="lineChart" layoutX="280.0" layoutY="162.0" prefHeight="430.0" prefWidth="500.0" title="Stock">
+      <LineChart fx:id="lineChart" layoutX="290.0" layoutY="162.0" prefHeight="430.0" prefWidth="500.0" title="Stock">
         <xAxis>
           <CategoryAxis side="BOTTOM" fx:id="x" />
         </xAxis>
@@ -43,19 +43,15 @@
       <Label layoutX="24.0" layoutY="173.0" text="Total Stocks:" />
       <Label layoutX="21.0" layoutY="103.0" text="Total Amount:" />
       <Label layoutX="250.0" layoutY="62.0" text="Days 30/30" />
-      <Label layoutX="386.0" layoutY="62.0" text="Varience" />
       <TextField fx:id="totalAssets" layoutX="118.0" layoutY="98.0" prefHeight="27.0" prefWidth="104.0" promptText="Total assets" />
-      <Label layoutX="269.0" layoutY="103.0" text="shares" />
-      <TextField fx:id="numVar" layoutX="377.0" layoutY="85.0" prefHeight="27.0" prefWidth="72.0" />
-      <Label layoutX="513.0" layoutY="62.0" text="Charts" />
-      <TextField fx:id="numChart" layoutX="506.0" layoutY="85.0" prefHeight="27.0" prefWidth="70.0" />
-      <Label layoutX="646.0" layoutY="62.0" text="Total Items" />
-      <TextField fx:id="tItems" layoutX="644.0" layoutY="85.0" prefHeight="27.0" prefWidth="120.0" />
+      <Label layoutX="255.0" layoutY="103.0" text="shares" />
       <TextField fx:id="Gshares" layoutX="25.0" layoutY="276.0" prefHeight="27.0" prefWidth="41.0" />
       <TextField fx:id="gStock" layoutX="134.0" layoutY="276.0" prefHeight="27.0" prefWidth="72.0" />
       <TextField fx:id="rShares" layoutX="25.0" layoutY="387.0" prefHeight="27.0" prefWidth="41.0" />
       <TextField fx:id="rStock" layoutX="134.0" layoutY="387.0" prefHeight="27.0" prefWidth="72.0" />
       <TextField fx:id="oShare" layoutX="25.0" layoutY="496.0" prefHeight="27.0" prefWidth="41.0" />
       <TextField fx:id="oStock" layoutX="125.0" layoutY="496.0" prefHeight="27.0" prefWidth="72.0" />
+      <TextField fx:id="tCash" layoutX="101.0" layoutY="130.0" />
+      <TextField fx:id="tStock" layoutX="108.0" layoutY="168.0" />
    </children>
 </AnchorPane>
