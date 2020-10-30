@@ -17,7 +17,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="731.0" prefWidth="841.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.GameController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="731.0" prefWidth="841.0" stylesheets="@Game.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.GameController">
    <left>
       <VBox prefHeight="400.0" prefWidth="265.0" BorderPane.alignment="CENTER">
          <children>
@@ -174,7 +174,7 @@
                      <children>
                         <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="249.0">
                            <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="BLU Stock Owned">
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="YELLOW Stock Owned">
                                  <font>
                                     <Font size="19.0" />
                                  </font>
@@ -260,7 +260,7 @@
       </HBox>
    </bottom>
    <center>
-      <LineChart fx:id="LineChart" BorderPane.alignment="CENTER">
+      <LineChart fx:id="LineChart" stylesheets="@Game.css" BorderPane.alignment="CENTER">
         <xAxis>
           <CategoryAxis side="BOTTOM" />
         </xAxis>
