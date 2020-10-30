@@ -245,7 +245,7 @@
    <bottom>
       <HBox alignment="CENTER_LEFT" prefHeight="71.0" prefWidth="600.0" spacing="10.0">
          <children>
-            <Button fx:id="BankruptcyButton" mnemonicParsing="false" onAction="#Bankruptcy" prefHeight="41.0" prefWidth="190.0" text="DECLARE BANKRUPCY" />
+            <Button fx:id="bankruptcyButton" mnemonicParsing="false" onAction="#Bankruptcy" prefHeight="41.0" prefWidth="190.0" text="DECLARE BANKRUPCY" />
             <VBox alignment="CENTER" prefHeight="71.0" prefWidth="222.0" HBox.hgrow="ALWAYS">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Goal" />
