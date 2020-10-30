@@ -30,7 +30,7 @@
                               <Font name="System Bold" size="19.0" />
                            </font>
                         </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="30">
+                        <Text fx:id="dayCount" strokeType="OUTSIDE" strokeWidth="0.0" text="30">
                            <font>
                               <Font name="System Bold" size="41.0" />
                            </font>
@@ -70,7 +70,7 @@
                                  </font>
                               </Text>
                               <Pane prefHeight="35.0" prefWidth="35.0" HBox.hgrow="ALWAYS" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="1">
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="0">
                                  <font>
                                     <Font name="System Bold" size="24.0" />
                                  </font>
@@ -85,7 +85,7 @@
                                  </font>
                               </Text>
                               <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="123">
+                              <Text fx:id="RedMV" strokeType="OUTSIDE" strokeWidth="0.0" text="123">
                                  <font>
                                     <Font name="System Bold" size="24.0" />
                                  </font>
@@ -100,7 +100,7 @@
                                  </font>
                               </Text>
                               <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="123">
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="0">
                                  <font>
                                     <Font name="System Bold" size="24.0" />
                                  </font>
@@ -125,7 +125,7 @@
                                  </font>
                               </Text>
                               <Pane prefHeight="35.0" prefWidth="35.0" HBox.hgrow="ALWAYS" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="1">
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="0">
                                  <font>
                                     <Font name="System Bold" size="24.0" />
                                  </font>
@@ -140,7 +140,7 @@
                                  </font>
                               </Text>
                               <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="123">
+                              <Text fx:id="GreenMV" strokeType="OUTSIDE" strokeWidth="0.0" text="123">
                                  <font>
                                     <Font name="System Bold" size="24.0" />
                                  </font>
@@ -155,7 +155,7 @@
                                  </font>
                               </Text>
                               <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="123">
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="0">
                                  <font>
                                     <Font name="System Bold" size="24.0" />
                                  </font>
@@ -180,7 +180,7 @@
                                  </font>
                               </Text>
                               <Pane prefHeight="35.0" prefWidth="35.0" HBox.hgrow="ALWAYS" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="1">
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="0">
                                  <font>
                                     <Font name="System Bold" size="24.0" />
                                  </font>
@@ -195,7 +195,7 @@
                                  </font>
                               </Text>
                               <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="123">
+                              <Text fx:id="YellowMV" strokeType="OUTSIDE" strokeWidth="0.0" text="123">
                                  <font>
                                     <Font name="System Bold" size="24.0" />
                                  </font>
@@ -210,7 +210,7 @@
                                  </font>
                               </Text>
                               <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="123">
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="0">
                                  <font>
                                     <Font name="System Bold" size="24.0" />
                                  </font>
