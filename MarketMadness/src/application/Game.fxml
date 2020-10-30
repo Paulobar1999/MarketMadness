@@ -64,7 +64,7 @@
                      <children>
                         <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="249.0">
                            <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="RED Stonk Owned">
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="RED Stock Owned">
                                  <font>
                                     <Font size="19.0" />
                                  </font>
@@ -119,7 +119,7 @@
                      <children>
                         <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="249.0">
                            <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Yellow Stonk Owned">
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="GREEN Stock Owned">
                                  <font>
                                     <Font size="19.0" />
                                  </font>
@@ -174,7 +174,7 @@
                      <children>
                         <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="249.0">
                            <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Orange Stonk Owned">
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="BLU Stock Owned">
                                  <font>
                                     <Font size="19.0" />
                                  </font>

@@ -10,46 +10,53 @@ import javafx.scene.chart.LineChart;
 import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
 
-
-
-
 public class GameController {
 
-    @FXML
-    private Button bankruptcyButton;
+	@FXML
+	private Button bankruptcyButton;
 
-    @FXML
-    private LineChart<?, ?> LineChart;
-    
-    @FXML
+	@FXML
+	private LineChart<?, ?> LineChart;
+	
+	
+	
+	@FXML
+	void initialize() {
+		GraphMaster.GameStart();
+	}
+	
+	@FXML
 	void Bankruptcy(ActionEvent event) throws IOException {
 		BorderPane root = (BorderPane) FXMLLoader.load(getClass().getResource("Main.fxml"));
 		Scene scene = new Scene(root);
 		Main.primaryStage.setScene(scene);
 	}
-    
-    int globalDay = 1;
-    @SuppressWarnings("unchecked")
+
+	int globalDay = 1;
+
+	@SuppressWarnings("unchecked")
 	@FXML
-    void paintGraph() {
-    	//Style
-        LineChart.setAnimated(false); 
-	    LineChart.setLegendVisible(false);
-	    //LineChart.setCreateSymbols(false);
+	void paintGraph() {
+		// Style
+		LineChart.setAnimated(false);
+		LineChart.setLegendVisible(false);
 
-	    //Clean Last Graph
+		// Clean Last Graph
 		LineChart.getData().clear();
-		
-		//Add series
-		LineChart.getData().addAll(GraphMaster.Part(globalDay));
-		
-		//IncrementDay value
-		globalDay++;
-    	
-    }
-    @FXML
-    void handle(ActionEvent event) {
 
-    }
+		// Add series
+		LineChart.getData().addAll(GraphMaster.Part(1,globalDay));
+		LineChart.getData().addAll(GraphMaster.Part(2,globalDay));
+		LineChart.getData().addAll(GraphMaster.Part(3,globalDay));
+
+		// IncrementDay value
+		globalDay++;
+
+	}
+
+	@FXML
+	void handle(ActionEvent event) {
+
+	}
 
 }
