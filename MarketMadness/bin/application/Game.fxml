@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.canvas.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.LineChart?>
 <?import javafx.scene.chart.NumberAxis?>
@@ -9,49 +17,256 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SampleController">
-   <children>
-      <Button fx:id="d_bank" layoutX="36.0" layoutY="720.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="165.0" text="Declare Bankruptcy" />
-      <Button fx:id="G_start" layoutX="35.0" layoutY="671.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="165.0" text="Start" />
-      <LineChart fx:id="lineChart" layoutX="290.0" layoutY="162.0" prefHeight="430.0" prefWidth="500.0" title="Stock">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="731.0" prefWidth="841.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.GameController">
+   <left>
+      <VBox prefHeight="400.0" prefWidth="265.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER" prefHeight="115.0" prefWidth="265.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="83.0" prefWidth="265.0" spacing="10.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Days Left">
+                           <font>
+                              <Font name="System Bold" size="19.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="30">
+                           <font>
+                              <Font name="System Bold" size="41.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <FlowPane alignment="CENTER" columnHalignment="CENTER" orientation="VERTICAL" prefHeight="294.0" prefWidth="272.0" vgap="10.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Total $$$$">
+                     <font>
+                        <Font name="System Bold" size="26.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Total Stock $$$$">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Total Cash $$$$">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Text>
+               </children>
+            </FlowPane>
+            <FlowPane alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="200.0" vgap="30.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <VBox prefHeight="67.0" prefWidth="260.0">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="249.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="RED Stonk Owned">
+                                 <font>
+                                    <Font size="19.0" />
+                                 </font>
+                              </Text>
+                              <Pane prefHeight="35.0" prefWidth="35.0" HBox.hgrow="ALWAYS" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="1">
+                                 <font>
+                                    <Font name="System Bold" size="24.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="249.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Market Value">
+                                 <font>
+                                    <Font size="19.0" />
+                                 </font>
+                              </Text>
+                              <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="123">
+                                 <font>
+                                    <Font name="System Bold" size="24.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="249.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Held Value">
+                                 <font>
+                                    <Font size="19.0" />
+                                 </font>
+                              </Text>
+                              <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="123">
+                                 <font>
+                                    <Font name="System Bold" size="24.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="48.0" prefWidth="260.0" spacing="10.0">
+                           <children>
+                              <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="127.0" text="BUY" />
+                              <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="140.0" text="SELL" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="67.0" prefWidth="260.0">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="249.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Yellow Stonk Owned">
+                                 <font>
+                                    <Font size="19.0" />
+                                 </font>
+                              </Text>
+                              <Pane prefHeight="35.0" prefWidth="35.0" HBox.hgrow="ALWAYS" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="1">
+                                 <font>
+                                    <Font name="System Bold" size="24.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="249.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Market Value">
+                                 <font>
+                                    <Font size="19.0" />
+                                 </font>
+                              </Text>
+                              <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="123">
+                                 <font>
+                                    <Font name="System Bold" size="24.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="249.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Held Value">
+                                 <font>
+                                    <Font size="19.0" />
+                                 </font>
+                              </Text>
+                              <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="123">
+                                 <font>
+                                    <Font name="System Bold" size="24.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="48.0" prefWidth="260.0" spacing="10.0">
+                           <children>
+                              <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="127.0" text="BUY" />
+                              <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="140.0" text="SELL" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="67.0" prefWidth="260.0">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="249.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Orange Stonk Owned">
+                                 <font>
+                                    <Font size="19.0" />
+                                 </font>
+                              </Text>
+                              <Pane prefHeight="35.0" prefWidth="35.0" HBox.hgrow="ALWAYS" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="1">
+                                 <font>
+                                    <Font name="System Bold" size="24.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="249.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Market Value">
+                                 <font>
+                                    <Font size="19.0" />
+                                 </font>
+                              </Text>
+                              <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="123">
+                                 <font>
+                                    <Font name="System Bold" size="24.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="249.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Held Value">
+                                 <font>
+                                    <Font size="19.0" />
+                                 </font>
+                              </Text>
+                              <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="123">
+                                 <font>
+                                    <Font name="System Bold" size="24.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="48.0" prefWidth="260.0" spacing="10.0">
+                           <children>
+                              <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="127.0" text="BUY" />
+                              <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="140.0" text="SELL" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets left="12.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="20.0" />
+               </padding>
+            </FlowPane>
+         </children>
+         <BorderPane.margin>
+            <Insets top="20.0" />
+         </BorderPane.margin>
+      </VBox>
+   </left>
+   <bottom>
+      <HBox alignment="CENTER_LEFT" prefHeight="71.0" prefWidth="600.0" spacing="10.0">
+         <children>
+            <Button fx:id="BankruptcyButton" mnemonicParsing="false" onAction="#Bankruptcy" prefHeight="41.0" prefWidth="190.0" text="DECLARE BANKRUPCY" />
+            <VBox alignment="CENTER" prefHeight="71.0" prefWidth="222.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Goal" />
+                  <ProgressBar prefWidth="200.0" progress="0.0" />
+               </children>
+            </VBox>
+            <Button mnemonicParsing="false" prefHeight="41.0" prefWidth="190.0" text="NEXT DAY" />
+         </children>
+         <BorderPane.margin>
+            <Insets left="12.0" right="12.0" />
+         </BorderPane.margin>
+      </HBox>
+   </bottom>
+   <center>
+      <LineChart BorderPane.alignment="CENTER">
         <xAxis>
-          <CategoryAxis side="BOTTOM" fx:id="x" />
+          <CategoryAxis side="BOTTOM" />
         </xAxis>
         <yAxis>
-          <NumberAxis fx:id="y" side="LEFT" upperBound="20000.0" />
+          <NumberAxis side="LEFT" />
         </yAxis>
       </LineChart>
-      <Label layoutX="259.0" layoutY="384.0" rotate="-93.6" text="Money" />
-      <Label layoutX="560.0" layoutY="592.0" text="Days" />
-      <Label layoutX="48.0" layoutY="62.0" text="Portfolio" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff1f23" height="86.0" layoutX="21.0" layoutY="334.0" stroke="BLACK" strokeType="INSIDE" width="233.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#21ff32" height="86.0" layoutX="21.0" layoutY="224.0" stroke="BLACK" strokeType="INSIDE" width="233.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffb821" height="86.0" layoutX="18.0" layoutY="444.0" stroke="BLACK" strokeType="INSIDE" width="233.0" />
-      <Button fx:id="G_sell" layoutX="209.0" layoutY="233.0" mnemonicParsing="false" text="Sell" />
-      <Button fx:id="G_buy" layoutX="209.0" layoutY="276.0" mnemonicParsing="false" text="Buy" />
-      <Button fx:id="R_sell" layoutX="209.0" layoutY="344.0" mnemonicParsing="false" text="Sell" />
-      <Button fx:id="R_buy" layoutX="209.0" layoutY="387.0" mnemonicParsing="false" text="Buy" />
-      <Button fx:id="O_sell" layoutX="202.0" layoutY="451.0" mnemonicParsing="false" text="Sell" />
-      <Button fx:id="O_buy" layoutX="201.0" layoutY="496.0" mnemonicParsing="false" text="Buy" />
-      <Label layoutX="67.0" layoutY="501.0" text="share at" />
-      <Label layoutX="75.0" layoutY="281.0" text="share at" />
-      <Label layoutX="80.0" layoutY="392.0" text="share at" />
-      <Label layoutX="26.0" layoutY="238.0" text="Green Energy CO." />
-      <Label layoutX="31.0" layoutY="340.0" text="Red Planet Imports" />
-      <Label layoutX="30.0" layoutY="456.0" text="Orange Haven Data" />
-      <Label layoutX="22.0" layoutY="135.0" text="Total Cash:" />
-      <Label layoutX="24.0" layoutY="173.0" text="Total Stocks:" />
-      <Label layoutX="21.0" layoutY="103.0" text="Total Amount:" />
-      <Label layoutX="250.0" layoutY="62.0" text="Days 30/30" />
-      <TextField fx:id="totalAssets" layoutX="118.0" layoutY="98.0" prefHeight="27.0" prefWidth="104.0" promptText="Total assets" />
-      <Label layoutX="255.0" layoutY="103.0" text="shares" />
-      <TextField fx:id="Gshares" layoutX="25.0" layoutY="276.0" prefHeight="27.0" prefWidth="41.0" />
-      <TextField fx:id="gStock" layoutX="134.0" layoutY="276.0" prefHeight="27.0" prefWidth="72.0" />
-      <TextField fx:id="rShares" layoutX="25.0" layoutY="387.0" prefHeight="27.0" prefWidth="41.0" />
-      <TextField fx:id="rStock" layoutX="134.0" layoutY="387.0" prefHeight="27.0" prefWidth="72.0" />
-      <TextField fx:id="oShare" layoutX="25.0" layoutY="496.0" prefHeight="27.0" prefWidth="41.0" />
-      <TextField fx:id="oStock" layoutX="125.0" layoutY="496.0" prefHeight="27.0" prefWidth="72.0" />
-      <TextField fx:id="tCash" layoutX="101.0" layoutY="130.0" />
-      <TextField fx:id="tStock" layoutX="108.0" layoutY="168.0" />
-   </children>
-</AnchorPane>
+   </center>
+</BorderPane>
