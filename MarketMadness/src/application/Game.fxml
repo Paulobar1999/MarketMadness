@@ -252,6 +252,7 @@
                   <ProgressBar prefWidth="200.0" progress="0.0" />
                </children>
             </VBox>
+            <Button fx:id="EndButton" mnemonicParsing="false" onAction="#paintGraph" prefHeight="41.0" prefWidth="190.0" text="RESULTS" visible="false" />
             <Button fx:id="NextButton" mnemonicParsing="false" onAction="#paintGraph" prefHeight="41.0" prefWidth="190.0" text="NEXT DAY" />
          </children>
          <BorderPane.margin>

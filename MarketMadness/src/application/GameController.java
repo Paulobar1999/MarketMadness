@@ -18,6 +18,9 @@ public class GameController {
 
 	@FXML
 	private Button NextButton;
+	
+    @FXML
+    private Button EndButton;
 
 	@FXML
 	private LineChart<?, ?> LineChart;
@@ -41,7 +44,6 @@ public class GameController {
 		GraphMaster.GameStart();
 		daysLeft = GraphMaster.endDay;
 		paintGraph();
-
 	}
 
 	@FXML
@@ -85,7 +87,15 @@ public class GameController {
 		// Disable next button
 		if (daysLeft == 0) {
 			NextButton.setDisable(true);
+			EndButton.setVisible(true);
 		}
+	}
+	
+	@FXML
+	void EndScreen(ActionEvent event) throws IOException {
+		BorderPane root = (BorderPane) FXMLLoader.load(getClass().getResource("Pass.fxml"));
+		Scene scene = new Scene(root);
+		Main.primaryStage.setScene(scene);
 	}
 
 	@FXML
