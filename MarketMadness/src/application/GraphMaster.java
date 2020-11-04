@@ -15,9 +15,9 @@ public class GraphMaster {
 		curDay = 1;
 		endDay = 51;
 
-		MapMap.put("Red", masterGen(5, 100, 3));
+		MapMap.put("Red", masterGen(   30, 100, 1));
 		MapMap.put("Yellow", masterGen(15, 100, 2));
-		MapMap.put("Green", masterGen(30, 100, 1));
+		MapMap.put("Green", masterGen(  5, 100, 3));
 
 	}
 
