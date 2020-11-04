@@ -56,6 +56,7 @@ public class GameController {
 	void paintGraph() {
 		// Vars
 		int currentDay = GraphMaster.getCurDay();
+		String[] stockArray = { "Red", "Yellow", "Green" };
 
 		// Style
 		LineChart.setAnimated(false);
@@ -65,14 +66,14 @@ public class GameController {
 		LineChart.getData().clear();
 
 		// Add series
-		LineChart.getData().addAll(GraphMaster.Part(1, currentDay));
-		LineChart.getData().addAll(GraphMaster.Part(2, currentDay));
-		LineChart.getData().addAll(GraphMaster.Part(3, currentDay));
+		for (String stock : stockArray) {
+			LineChart.getData().addAll(GraphMaster.Part(stock, currentDay));
+		}
 
 		// Post All 3 prices
-		RedMV.setText("$" + GraphMaster.RedMap.get(currentDay));
-		GreenMV.setText("$" + GraphMaster.GreenMap.get(currentDay));
-		YellowMV.setText("$" + GraphMaster.OrangeMap.get(currentDay));
+		RedMV.setText("$" + GraphMaster.curPrice("Red", currentDay));
+		GreenMV.setText("$" + GraphMaster.curPrice("Green", currentDay));
+		YellowMV.setText("$" + GraphMaster.curPrice("Yellow", currentDay));
 
 		// Change Days left
 		dayCount.setText(daysLeft - 1 + "");

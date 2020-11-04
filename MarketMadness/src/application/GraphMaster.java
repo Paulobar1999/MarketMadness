@@ -7,11 +7,11 @@ import javafx.scene.chart.XYChart.Data;
 public class GraphMaster {
 
 	// MAPS
-	//static HashMap<Integer, Integer> RedMap = null;
-	//static HashMap<Integer, Integer> YellowMap = null;
-	//static HashMap<Integer, Integer> GreenMap = null;
-	
-	static HashMap<String, HashMap<Integer, Integer>> MapMap =  new HashMap<String, HashMap<Integer, Integer>>();
+	// static HashMap<Integer, Integer> RedMap = null;
+	// static HashMap<Integer, Integer> YellowMap = null;
+	// static HashMap<Integer, Integer> GreenMap = null;
+
+	static HashMap<String, HashMap<Integer, Integer>> MapMap = new HashMap<String, HashMap<Integer, Integer>>();
 
 	static int curDay;
 	static int endDay;
@@ -19,10 +19,10 @@ public class GraphMaster {
 	public static void GameStart() {
 		curDay = 1;
 		endDay = 51;
-		//RedMap = masterGen(10, 100, 2);
-		//YellowMap = masterGen(10, 100, 2);
-		//GreenMap = masterGen(10, 100, 2);
-		
+		// RedMap = masterGen(10, 100, 2);
+		// YellowMap = masterGen(10, 100, 2);
+		// GreenMap = masterGen(10, 100, 2);
+
 		MapMap.put("Red", masterGen(10, 100, 2));
 		MapMap.put("Yellow", masterGen(10, 100, 2));
 		MapMap.put("Green", masterGen(10, 100, 2));
@@ -47,9 +47,8 @@ public class GraphMaster {
 
 		HashMap<Integer, Integer> masterMap = null;
 
-		if(MapMap.containsKey(stock))
+		if (MapMap.containsKey(stock))
 			masterMap = MapMap.get(stock);
-		
 
 		XYChart.Series seriesSet = new XYChart.Series();
 		for (int i = 0; i < day; i++) {
@@ -77,7 +76,7 @@ public class GraphMaster {
 
 	//// RETURN PRICE OF STOCK
 	public static int curPrice(String stock, int day) {
-		if(MapMap.containsKey(stock))
+		if (MapMap.containsKey(stock))
 			return MapMap.get(stock).get(day);
 		return -1;
 	}
