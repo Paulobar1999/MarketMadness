@@ -7,18 +7,25 @@ import javafx.scene.chart.XYChart.Data;
 public class GraphMaster {
 
 	// MAPS
-	static HashMap<Integer, Integer> RedMap = null;
-	static HashMap<Integer, Integer> OrangeMap = null;
-	static HashMap<Integer, Integer> GreenMap = null;
+	//static HashMap<Integer, Integer> RedMap = null;
+	//static HashMap<Integer, Integer> YellowMap = null;
+	//static HashMap<Integer, Integer> GreenMap = null;
+	
+	static HashMap<String, HashMap<Integer, Integer>> MapMap =  new HashMap<String, HashMap<Integer, Integer>>();
+
 	static int curDay;
 	static int endDay;
 
 	public static void GameStart() {
 		curDay = 1;
 		endDay = 51;
-		RedMap = masterGen(10, 100, 2);
-		OrangeMap = masterGen(10, 100, 2);
-		GreenMap = masterGen(10, 100, 2);
+		//RedMap = masterGen(10, 100, 2);
+		//YellowMap = masterGen(10, 100, 2);
+		//GreenMap = masterGen(10, 100, 2);
+		
+		MapMap.put("Red", masterGen(10, 100, 2));
+		MapMap.put("Yellow", masterGen(10, 100, 2));
+		MapMap.put("Green", masterGen(10, 100, 2));
 
 	}
 
@@ -36,17 +43,13 @@ public class GraphMaster {
 
 	//// RETURN PART OF MAP AS SERIES
 	@SuppressWarnings({ "rawtypes", "unchecked" })
-	public static XYChart.Series Part(int stock, int day) {
+	public static XYChart.Series Part(String stock, int day) {
 
 		HashMap<Integer, Integer> masterMap = null;
 
-		// Make Map of Maps?
-		if (stock == 1)
-			masterMap = RedMap;
-		else if (stock == 2)
-			masterMap = OrangeMap;
-		else if (stock == 3)
-			masterMap = GreenMap;
+		if(MapMap.containsKey(stock))
+			masterMap = MapMap.get(stock);
+		
 
 		XYChart.Series seriesSet = new XYChart.Series();
 		for (int i = 0; i < day; i++) {
@@ -73,13 +76,9 @@ public class GraphMaster {
 	}
 
 	//// RETURN PRICE OF STOCK
-	public static int curPrice(int stock, int day) {
-		if (stock == 1)
-			return RedMap.get(day);
-		if (stock == 2)
-			return OrangeMap.get(day);
-		if (stock == 3)
-			return GreenMap.get(day);
+	public static int curPrice(String stock, int day) {
+		if(MapMap.containsKey(stock))
+			return MapMap.get(stock).get(day);
 		return -1;
 	}
 
