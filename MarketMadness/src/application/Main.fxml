@@ -9,23 +9,17 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
-   <top>
-      <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <center>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="MARKET MADNESS" BorderPane.alignment="CENTER">
-               <font>
-                  <Font name="System Bold Italic" size="58.0" />
-               </font>
-            </Text>
-         </center>
-      </BorderPane>
-   </top>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="731.0" prefWidth="841.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
    <center>
       <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <center>
-            <FlowPane alignment="TOP_CENTER" orientation="VERTICAL" prefHeight="200.0" prefWidth="200.0" vgap="10.0" BorderPane.alignment="CENTER">
+            <FlowPane alignment="CENTER" columnHalignment="CENTER" orientation="VERTICAL" prefHeight="200.0" prefWidth="200.0" vgap="10.0" BorderPane.alignment="CENTER">
                <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="MARKET MADNESS">
+                     <font>
+                        <Font name="System Bold Italic" size="58.0" />
+                     </font>
+                  </Text>
                   <Button fx:id="playButton" mnemonicParsing="false" onAction="#GameStart" prefHeight="31.0" prefWidth="192.0" text="PLAY">
                      <font>
                         <Font name="System Bold" size="32.0" />

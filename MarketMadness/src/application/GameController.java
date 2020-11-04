@@ -93,7 +93,7 @@ public class GameController {
 	
 	@FXML
 	void EndScreen(ActionEvent event) throws IOException {
-		BorderPane root = (BorderPane) FXMLLoader.load(getClass().getResource("Pass.fxml"));
+		BorderPane root = (BorderPane) FXMLLoader.load(getClass().getResource("ResultScreen.fxml"));
 		Scene scene = new Scene(root);
 		Main.primaryStage.setScene(scene);
 	}
