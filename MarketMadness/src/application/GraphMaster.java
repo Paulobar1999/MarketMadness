@@ -5,12 +5,7 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.chart.XYChart.Data;
 
 public class GraphMaster {
-
-	// MAPS
-	// static HashMap<Integer, Integer> RedMap = null;
-	// static HashMap<Integer, Integer> YellowMap = null;
-	// static HashMap<Integer, Integer> GreenMap = null;
-
+	
 	static HashMap<String, HashMap<Integer, Integer>> MapMap = new HashMap<String, HashMap<Integer, Integer>>();
 
 	static int curDay;
@@ -19,9 +14,6 @@ public class GraphMaster {
 	public static void GameStart() {
 		curDay = 1;
 		endDay = 51;
-		// RedMap = masterGen(10, 100, 2);
-		// YellowMap = masterGen(10, 100, 2);
-		// GreenMap = masterGen(10, 100, 2);
 
 		MapMap.put("Red", masterGen(10, 100, 2));
 		MapMap.put("Yellow", masterGen(10, 100, 2));
