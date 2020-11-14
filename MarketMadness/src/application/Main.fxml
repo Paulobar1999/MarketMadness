@@ -13,7 +13,7 @@
    <center>
       <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <center>
-            <FlowPane alignment="CENTER" columnHalignment="CENTER" orientation="VERTICAL" prefHeight="200.0" prefWidth="200.0" vgap="10.0" BorderPane.alignment="CENTER">
+            <FlowPane alignment="CENTER" columnHalignment="CENTER" orientation="VERTICAL" prefHeight="200.0" prefWidth="200.0" vgap="10.0" BorderPane.alignment="BOTTOM_LEFT">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="MARKET MADNESS">
                      <font>
@@ -25,8 +25,8 @@
                         <Font name="System Bold" size="32.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="192.0" text="Credits" />
-                  <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="192.0" text="Exit" />
+                  <Button fx:id="creditsButton" mnemonicParsing="false" onAction="#GoToCredits" prefHeight="31.0" prefWidth="192.0" text="Credits" />
+                  <Button fx:id="ExitButton" mnemonicParsing="false" onAction="#Exit" prefHeight="31.0" prefWidth="192.0" text="Exit" />
                </children>
             </FlowPane>
          </center>
