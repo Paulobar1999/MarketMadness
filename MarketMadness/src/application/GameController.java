@@ -108,7 +108,7 @@ public class GameController {
 		Parent root = resultsLoader.load();
 
         ResultController getUserController = resultsLoader.getController();
-        getUserController.initializeResults( totalCashText );
+        getUserController.initializeResults( absTotalText );
 		
 		Scene scene = new Scene(root);
 		Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
