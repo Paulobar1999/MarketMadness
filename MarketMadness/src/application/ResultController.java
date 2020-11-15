@@ -25,9 +25,9 @@ public class ResultController {
 	@FXML Button ExitButton;
 	
 	//Function gets needed highscore values in int form.
-	void initializeResults(Text totalCashText) throws FileNotFoundException {
+	void initializeResults(Text absTotalText) throws FileNotFoundException {
 		//get players high score from current instance
-		int currentPlayerScore = Integer.parseInt( totalCashText.getText().replace("$", "" ) );
+		int currentPlayerScore = Integer.parseInt( absTotalText.getText().replace("$", "" ) );
 		
 		//get highscore from file
 		Scanner getHighscore = new Scanner(new File("src/application/highscore.txt"));
