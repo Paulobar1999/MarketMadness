@@ -30,9 +30,10 @@ public class ResultController {
 		int currentPlayerScore = Integer.parseInt( absTotalText.getText().replace("$", "" ) );
 		
 		//get highscore from file
-		Scanner getHighscore = new Scanner(new File("src/application/highscore.txt"));
+		File gradeFile = new File("score.txt");
+		Scanner getHighscore = new Scanner(gradeFile);
 		int  storedHighScore = Integer.parseInt( getHighscore.nextLine().replace("$", "" ) );
-
+		getHighscore.close();
 		compareResults(currentPlayerScore, storedHighScore);
 	}
 	
