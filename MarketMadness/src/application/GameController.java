@@ -106,16 +106,12 @@ public class GameController {
 	void EndScreen(ActionEvent event) throws IOException {
 		FXMLLoader resultsLoader = new FXMLLoader(getClass().getResource("ResultScreen.fxml"));
 		Parent root = resultsLoader.load();
-
         ResultController getUserController = resultsLoader.getController();
         getUserController.initializeResults( absTotalText );
-		
 		Scene scene = new Scene(root);
 		Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
-		
 		//put 'css' file for results screen here, if at all needed.
 		//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-		
 		window.setScene(scene);
 	}
 
