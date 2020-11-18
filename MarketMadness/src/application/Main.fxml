@@ -14,6 +14,7 @@
       <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <center>
             <FlowPane alignment="CENTER" columnHalignment="CENTER" orientation="VERTICAL" prefHeight="200.0" prefWidth="200.0" vgap="50.0" BorderPane.alignment="BOTTOM_LEFT">
+
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="MARKET MADNESS">
                      <font>
