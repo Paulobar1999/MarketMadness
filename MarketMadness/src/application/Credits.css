@@ -2,9 +2,6 @@
 .BorderPane{
 -fx-background-color: #FFFCF7;
 }
-.chart-series-line{
-	-fx-stroke-width: 2.0px;
-}
 
 .button {
 	-fx-font-weight: bold;
@@ -18,14 +15,5 @@
 }
 .button:pressed {
 	-fx-background-color: #cccac6;
-	-fx-rotate:2.0;
-}
-#redBox{
-	-fx-border-color: red;
-}
-#greenBox{
-	-fx-border-color: green;
-}
-#yellowBox{
-	-fx-border-color: yellow;
+	-fx-rotate:2;
 }

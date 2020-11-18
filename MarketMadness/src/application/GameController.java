@@ -12,6 +12,7 @@ import javafx.scene.Scene;
 import javafx.scene.chart.LineChart;
 import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -63,14 +64,27 @@ public class GameController {
 	private Text totalStockText;
 	@FXML
 	private Text totalCashText;
-
+    @FXML
+    private VBox redBox;
+    @FXML
+    private VBox greenBox;    
+    @FXML
+    private VBox yellowBox;
+    
 	static HashMap<String, Text> textMap = new HashMap<String, Text>();
 	static HashMap<String, Button> buttonMap = new HashMap<String, Button>();
 
 	@FXML
 	void initialize() {
+		//Style
+	    //LineChart.setCreateSymbols(false);
+	    LineChart.getXAxis().setOpacity(.2);
+	    LineChart.getYAxis().setOpacity(.5);
+	    //redBox.setStyle("-fx-background-color: #ffbebd;");
 
-		// Add all text to Text Map
+	    
+	    
+	    // Add all text to Text Map
 		String[] textNames = { "RedMV", "GreenMV", "YellowMV", "daycount", "RedSO", "GreenSO", "YellowSO", "RedOV",
 				"GreenOV", "YellowOV", "AbsTotal", "StockTotal", "CashTotal" };
 		Text[] textRef = { RedMV, GreenMV, YellowMV, dayCount, redSOText, greenSOText, yellowSOText, redOVText,

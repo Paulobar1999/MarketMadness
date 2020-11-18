@@ -23,7 +23,7 @@
          <children>
             <VBox alignment="CENTER" prefHeight="115.0" prefWidth="265.0">
                <children>
-                  <HBox alignment="CENTER" prefHeight="83.0" prefWidth="265.0" spacing="10.0">
+                  <HBox alignment="CENTER" prefHeight="35.0" prefWidth="273.0" spacing="10.0">
                      <children>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Days Left">
                            <font>
@@ -56,41 +56,41 @@
                         </Text>
                      </children>
                   </HBox>
-                  <HBox opacity="0.55" prefHeight="40.0" prefWidth="200.0">
+                  <HBox opacity="0.55" prefHeight="20.0" prefWidth="273.0">
                      <children>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Total Stock">
                            <font>
-                              <Font name="System Bold" size="26.0" />
+                              <Font name="System Bold" size="20.0" />
                            </font>
                         </Text>
-                        <Region prefHeight="40.0" prefWidth="142.0" />
+                        <Region prefHeight="27.0" prefWidth="196.0" />
                         <Text fx:id="totalStockText" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
                            <font>
-                              <Font name="System Bold" size="26.0" />
+                              <Font name="System Bold" size="20.0" />
                            </font>
                         </Text>
                      </children>
                   </HBox>
-                  <HBox opacity="0.55" prefHeight="40.0" prefWidth="273.0">
+                  <HBox opacity="0.55" prefHeight="26.0" prefWidth="273.0">
                      <children>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Total Cash">
                            <font>
-                              <Font name="System Bold" size="26.0" />
+                              <Font name="System Bold" size="20.0" />
                            </font>
                         </Text>
-                        <Region prefHeight="40.0" prefWidth="131.0" />
+                        <Region prefHeight="27.0" prefWidth="178.0" />
                         <Text fx:id="totalCashText" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
                            <font>
-                              <Font name="System Bold" size="26.0" />
+                              <Font name="System Bold" size="20.0" />
                            </font>
                         </Text>
                      </children>
                   </HBox>
                </children>
             </FlowPane>
-            <FlowPane alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="200.0" vgap="30.0" VBox.vgrow="ALWAYS">
+            <FlowPane alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="200.0" vgap="10.0" VBox.vgrow="ALWAYS">
                <children>
-                  <VBox prefHeight="67.0" prefWidth="260.0">
+                  <VBox fx:id="redBox" prefHeight="67.0" prefWidth="260.0">
                      <children>
                         <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="249.0">
                            <children>
@@ -144,8 +144,11 @@
                            </children>
                         </HBox>
                      </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
                   </VBox>
-                  <VBox prefHeight="67.0" prefWidth="260.0">
+                  <VBox fx:id="greenBox" prefHeight="67.0" prefWidth="260.0">
                      <children>
                         <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="249.0">
                            <children>
@@ -199,8 +202,11 @@
                            </children>
                         </HBox>
                      </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
                   </VBox>
-                  <VBox prefHeight="67.0" prefWidth="260.0">
+                  <VBox fx:id="yellowBox" prefHeight="67.0" prefWidth="260.0">
                      <children>
                         <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="249.0">
                            <children>
@@ -254,6 +260,9 @@
                            </children>
                         </HBox>
                      </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
                   </VBox>
                </children>
                <opaqueInsets>
