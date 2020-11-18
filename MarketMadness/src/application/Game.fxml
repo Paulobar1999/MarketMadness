@@ -302,23 +302,6 @@
               </yAxis>
             </LineChart>
          </center>
-         <bottom>
-            <HBox alignment="CENTER" prefHeight="80.0" prefWidth="568.0" BorderPane.alignment="CENTER">
-               <children>
-                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="53.0" prefWidth="483.0" text="BUY NEWS FOR $100 (ONE PER TURN)" textAlignment="CENTER">
-                     <font>
-                        <Font name="System Bold" size="17.0" />
-                     </font>
-                  </Button>
-               </children>
-               <BorderPane.margin>
-                  <Insets />
-               </BorderPane.margin>
-               <padding>
-                  <Insets left="50.0" />
-               </padding>
-            </HBox>
-         </bottom>
       </BorderPane>
    </center>
 </BorderPane>

@@ -12,28 +12,46 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="731.0" prefWidth="841.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ResultController">
    <center>
-      <FlowPane alignment="CENTER" columnHalignment="CENTER" orientation="VERTICAL" prefHeight="731.0" prefWidth="841.0" vgap="20.0" BorderPane.alignment="CENTER">
+      <FlowPane alignment="CENTER" columnHalignment="CENTER" orientation="VERTICAL" prefHeight="731.0" prefWidth="841.0" vgap="10.0" BorderPane.alignment="CENTER">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="RESULTS">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="RESULTS" translateY="-100.0" wrappingWidth="396.140625">
                <font>
-                  <Font name="System Bold" size="64.0" />
+                  <Font name="System Bold" size="96.0" />
                </font>
             </Text>
             <HBox alignment="CENTER" prefHeight="40.0" prefWidth="400.0">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="You were">
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Highscore: $">
                      <font>
                         <Font size="25.0" />
                      </font>
                   </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="X">
+                  <Text fx:id="PreviousHighScore" strokeType="OUTSIDE" strokeWidth="0.0" text="X">
                      <font>
                         <Font name="System Bold" size="25.0" />
                      </font>
                   </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text=" away from the highscore">
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="40.0" prefWidth="400.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Your Score: $">
                      <font>
                         <Font size="25.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="PlayerHighScore" strokeType="OUTSIDE" strokeWidth="0.0" text="X">
+                     <font>
+                        <Font name="System Bold" size="25.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="40.0" prefWidth="400.0">
+               <children>
+                  <Text fx:id="DescriptionBox" strokeType="OUTSIDE" strokeWidth="0.0" text="You beat the highscore by X amount.">
+                     <font>
+                        <Font name="System Bold" size="25.0" />
                      </font>
                   </Text>
                </children>
@@ -43,7 +61,7 @@
                   <Font size="19.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="41.0" prefWidth="191.0" text="Exit">
+            <Button fx:id="ExitButton" mnemonicParsing="false" onAction="#Exit" prefHeight="41.0" prefWidth="191.0" text="Exit">
                <font>
                   <Font size="19.0" />
                </font>

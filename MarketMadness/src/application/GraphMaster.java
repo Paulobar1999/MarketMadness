@@ -78,9 +78,13 @@ public class GraphMaster {
 		// Change Days left
 		uiMap.get("daycount").setText(endDay - curDay + "");
 
-		// Disable next button
+		// Disable next button, End of game
 		if (endDay - curDay == 0) {
 			buttonMap.get("Next").setDisable(true);
+			for (String butName : buttonMap.keySet()) {
+				buttonMap.get(butName).setDisable(true);
+			}
+			buttonMap.get("End").setDisable(false);
 			buttonMap.get("End").setVisible(true);
 		}
 	}

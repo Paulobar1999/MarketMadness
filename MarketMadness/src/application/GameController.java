@@ -6,11 +6,14 @@ import java.util.HashMap;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.LineChart;
 import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 public class GameController {
 
@@ -101,9 +104,15 @@ public class GameController {
 
 	@FXML
 	void EndScreen(ActionEvent event) throws IOException {
-		BorderPane root = (BorderPane) FXMLLoader.load(getClass().getResource("ResultScreen.fxml"));
+		FXMLLoader resultsLoader = new FXMLLoader(getClass().getResource("ResultScreen.fxml"));
+		Parent root = resultsLoader.load();
+		ResultController getUserController = resultsLoader.getController();
+		getUserController.initializeResults(absTotalText);
 		Scene scene = new Scene(root);
-		Main.primaryStage.setScene(scene);
+		Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+		// put 'css' file for results screen here, if at all needed.
+		// scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+		window.setScene(scene);
 	}
 
 	@FXML
