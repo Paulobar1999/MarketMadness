@@ -26,6 +26,7 @@ public class MainController {
 	void GameStart(ActionEvent event) throws IOException {
 		BorderPane root = (BorderPane) FXMLLoader.load(getClass().getResource("Game.fxml"));
 		Scene scene = new Scene(root);
+		scene.getStylesheets().add(getClass().getResource("Game.css").toExternalForm());
 		Main.primaryStage.setScene(scene);
 	}
 
@@ -35,14 +36,16 @@ public class MainController {
 		// get 'Credits' button to work.
 		BorderPane root = (BorderPane) FXMLLoader.load(getClass().getResource("Credits.fxml"));
 		Scene scene = new Scene(root);
+		scene.getStylesheets().add(getClass().getResource("Credits.css").toExternalForm());
+
 		Main.primaryStage.setScene(scene);
 	}
 
 	@FXML
 	void BackToMainMenu(ActionEvent event) throws IOException {
 		BorderPane root = (BorderPane) FXMLLoader.load(getClass().getResource("Main.fxml"));
-
 		Scene scene = new Scene(root);
+		scene.getStylesheets().add(getClass().getResource("Main.css").toExternalForm());
 		Main.primaryStage.setScene(scene);
 	}
 
