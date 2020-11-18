@@ -21,7 +21,6 @@ public class ResultController {
 	@FXML  Text PlayerHighScore;
 	@FXML  Text PreviousHighScore;
 	@FXML  Text DescriptionBox;
-	
 	@FXML Button ExitButton;
 	
 	//Function gets needed highscore values in int form.
@@ -46,21 +45,21 @@ public class ResultController {
 		//if highscore is greater than the previous
 		if( currentPlayerScore > storedHighScore ) {
 			updateHighScore(currentPlayerScore);
-			DescriptionBox.setText("You were $" + (currentPlayerScore - storedHighScore) + " over the previous highscore!");
+			DescriptionBox.setText("You were $" + (currentPlayerScore - storedHighScore) + " over the highscore!");
 		}
 		//If, by some divine intervention, a player matches their previous highscore
 		else if(currentPlayerScore == storedHighScore) {
-			DescriptionBox.setText("You matched the previous High Score!");
+			DescriptionBox.setText("You matched the High Score!");
 		}
 		//if user fails to get a higher score
 		else {
-			DescriptionBox.setText("You were $" + (storedHighScore - currentPlayerScore) + " under the previous highscore!");
+			DescriptionBox.setText("You were $" + (storedHighScore - currentPlayerScore) + " under the highscore!");
 		}
 	}
 	
 	//Function updates high score value only if there is a new highscore.
 	void updateHighScore( int currentPlayerScore ) throws FileNotFoundException {
-		PrintWriter fileWriter = new PrintWriter("src/application/highscore.txt");
+		PrintWriter fileWriter = new PrintWriter("score.txt");
 		fileWriter.print("");
 		fileWriter.print( currentPlayerScore );
 		fileWriter.close();
