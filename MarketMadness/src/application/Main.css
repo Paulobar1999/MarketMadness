@@ -1,10 +1,11 @@
 .button {
 	-fx-background-radius: 10;
-	
+	-fx-font-size: 32;
 }
 .button:hover {
 	-fx-background-radius: 8;
 }
 .button:pressed {
-	-fx-rotate:2;
+	-fx-font-size: 31;
+	-fx-background-radius: 10;
 }

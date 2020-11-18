@@ -19,6 +19,7 @@ public class Main extends Application {
 			Scene scene = new Scene(root,841,731);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			Main.primaryStage=primaryStage;
+			primaryStage.setTitle("MarketMadness");
 			primaryStage.setScene(scene);
 			primaryStage.show();
 			

@@ -9,24 +9,36 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="731.0" prefWidth="841.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="731.0" prefWidth="841.0" stylesheets="@Main.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
    <center>
       <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <center>
-            <FlowPane alignment="CENTER" columnHalignment="CENTER" orientation="VERTICAL" prefHeight="200.0" prefWidth="200.0" vgap="10.0" BorderPane.alignment="BOTTOM_LEFT">
+            <FlowPane alignment="CENTER" columnHalignment="CENTER" orientation="VERTICAL" prefHeight="200.0" prefWidth="200.0" vgap="50.0" BorderPane.alignment="BOTTOM_LEFT">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="MARKET MADNESS">
                      <font>
-                        <Font name="System Bold Italic" size="58.0" />
+                        <Font name="System Bold Italic" size="66.0" />
                      </font>
                   </Text>
-                  <Button fx:id="playButton" mnemonicParsing="false" onAction="#GameStart" prefHeight="31.0" prefWidth="192.0" text="PLAY">
-                     <font>
-                        <Font name="System Bold" size="32.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="creditsButton" mnemonicParsing="false" onAction="#GoToCredits" prefHeight="31.0" prefWidth="192.0" text="Credits" />
-                  <Button fx:id="ExitButton" mnemonicParsing="false" onAction="#Exit" prefHeight="31.0" prefWidth="192.0" text="Exit" />
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                     <children>
+                        <Button fx:id="playButton" mnemonicParsing="false" onAction="#GameStart" prefHeight="69.0" prefWidth="343.0" stylesheets="@Main.css" text="PLAY">
+                           <font>
+                              <Font name="System Bold" size="32.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="creditsButton" mnemonicParsing="false" onAction="#GoToCredits" prefHeight="62.0" prefWidth="341.0" text="Credits">
+                           <font>
+                              <Font name="System Bold" size="32.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="ExitButton" mnemonicParsing="false" onAction="#Exit" prefHeight="62.0" prefWidth="338.0" text="Exit">
+                           <font>
+                              <Font name="System Bold" size="32.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
                </children>
             </FlowPane>
          </center>
