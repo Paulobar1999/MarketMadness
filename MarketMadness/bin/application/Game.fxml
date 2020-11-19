@@ -94,13 +94,13 @@
                      <children>
                         <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="249.0">
                            <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="RED Stock Owned">
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Market Value">
                                  <font>
                                     <Font size="19.0" />
                                  </font>
                               </Text>
-                              <Pane prefHeight="35.0" prefWidth="35.0" HBox.hgrow="ALWAYS" />
-                              <Text fx:id="redSOText" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                              <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                              <Text fx:id="RedMV" strokeType="OUTSIDE" strokeWidth="0.0" text="123">
                                  <font>
                                     <Font name="System Bold" size="24.0" />
                                  </font>
@@ -109,13 +109,13 @@
                         </HBox>
                         <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="249.0">
                            <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Market Value">
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="RED Stock Owned">
                                  <font>
                                     <Font size="19.0" />
                                  </font>
                               </Text>
-                              <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
-                              <Text fx:id="RedMV" strokeType="OUTSIDE" strokeWidth="0.0" text="123">
+                              <Pane prefHeight="35.0" prefWidth="35.0" HBox.hgrow="ALWAYS" />
+                              <Text fx:id="redSOText" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
                                  <font>
                                     <Font name="System Bold" size="24.0" />
                                  </font>
@@ -152,13 +152,13 @@
                      <children>
                         <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="249.0">
                            <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="GREEN Stock Owned">
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Market Value">
                                  <font>
                                     <Font size="19.0" />
                                  </font>
                               </Text>
-                              <Pane prefHeight="35.0" prefWidth="35.0" HBox.hgrow="ALWAYS" />
-                              <Text fx:id="greenSOText" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                              <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                              <Text fx:id="GreenMV" strokeType="OUTSIDE" strokeWidth="0.0" text="123">
                                  <font>
                                     <Font name="System Bold" size="24.0" />
                                  </font>
@@ -167,13 +167,13 @@
                         </HBox>
                         <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="249.0">
                            <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Market Value">
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="GREEN Stock Owned">
                                  <font>
                                     <Font size="19.0" />
                                  </font>
                               </Text>
-                              <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
-                              <Text fx:id="GreenMV" strokeType="OUTSIDE" strokeWidth="0.0" text="123">
+                              <Pane prefHeight="35.0" prefWidth="35.0" HBox.hgrow="ALWAYS" />
+                              <Text fx:id="greenSOText" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
                                  <font>
                                     <Font name="System Bold" size="24.0" />
                                  </font>
@@ -210,13 +210,13 @@
                      <children>
                         <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="249.0">
                            <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="YELLOW Stock Owned">
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Market Value">
                                  <font>
                                     <Font size="19.0" />
                                  </font>
                               </Text>
-                              <Pane prefHeight="35.0" prefWidth="35.0" HBox.hgrow="ALWAYS" />
-                              <Text fx:id="yellowSOText" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                              <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                              <Text fx:id="YellowMV" strokeType="OUTSIDE" strokeWidth="0.0" text="123">
                                  <font>
                                     <Font name="System Bold" size="24.0" />
                                  </font>
@@ -225,13 +225,13 @@
                         </HBox>
                         <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="249.0">
                            <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Market Value">
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="YELLOW Stock Owned">
                                  <font>
                                     <Font size="19.0" />
                                  </font>
                               </Text>
-                              <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
-                              <Text fx:id="YellowMV" strokeType="OUTSIDE" strokeWidth="0.0" text="123">
+                              <Pane prefHeight="35.0" prefWidth="35.0" HBox.hgrow="ALWAYS" />
+                              <Text fx:id="yellowSOText" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
                                  <font>
                                     <Font name="System Bold" size="24.0" />
                                  </font>
