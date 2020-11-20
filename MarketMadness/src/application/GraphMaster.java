@@ -11,10 +11,10 @@ import javafx.scene.text.Text;
 public class GraphMaster {
 
 	static HashMap<String, HashMap<Integer, Integer>> MapMap = new HashMap<String, HashMap<Integer, Integer>>();
-
 	static int curDay;
 	static int endDay;
-
+	
+	
 	public static void GameStart() {
 		// Day values
 		curDay = 1;
@@ -99,7 +99,6 @@ public class GraphMaster {
 		HashMap<Integer, Integer> masterMap = null;
 		if (MapMap.containsKey(stock))
 			masterMap = MapMap.get(stock);
-
 		XYChart.Series seriesSet = new XYChart.Series();
 		for (int i = 0; i < day; i++) {
 			seriesSet.getData().add(new Data("Day " + Integer.toString(i), masterMap.get(i)));

@@ -84,7 +84,6 @@ public class PlayerData {
 	}
 
 	public static void SellStock(HashMap<String, Text> textMap, HashMap<String, Button> buttonMap, String stock) {
-
 		if (PlayerData.heldMap.get(stock) > 0) {
 			// add price to cash
 			PlayerData.cash = PlayerData.cash + GraphMaster.curPrice(stock, GraphMaster.curDay - 1);
