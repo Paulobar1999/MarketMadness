@@ -27,10 +27,17 @@ public class ResultController {
 	Button ExitButton;
 
 	// Function gets needed highscore values in int form.
+	/**
+	 * initializeResults takes in a Text element and cleans it to extract an integer
+	 * value, this value is sent to compareResults along with an Integer extracted
+	 * from a file called score.txt.
+	 * @see compareResults();
+	 * @param absTotalText Text containing the absolute total asset value of the player
+	 * @throws FileNotFoundException
+	 */
 	void initializeResults(Text absTotalText) throws FileNotFoundException {
 		// get players high score from current instance
 		int currentPlayerScore = Integer.parseInt(absTotalText.getText().replace("$", ""));
-
 		// get highscore from file
 		File gradeFile = new File("score.txt");
 		Scanner getHighscore = new Scanner(gradeFile);
@@ -39,7 +46,16 @@ public class ResultController {
 		compareResults(currentPlayerScore, storedHighScore);
 	}
 
-	// Function compares the values and determines what outcome to make.
+	/**
+	 * compareResults determines if the player has beat the recored highscore, if
+	 * so the according text will be displayed and the new highscore will be written
+	 * to file using updateHighScore.
+	 * 
+	 * @see updateHighScore()
+	 * @param currentPlayerScore The players final score
+	 * @param storedHighScore The current highest score, residing in score.txt
+	 * @throws FileNotFoundException
+	 */
 	void compareResults(int currentPlayerScore, int storedHighScore) throws FileNotFoundException {
 
 		PlayerHighScore.setText(Integer.toString(currentPlayerScore));
@@ -60,7 +76,14 @@ public class ResultController {
 		}
 	}
 
-	// Function updates high score value only if there is a new highscore.
+	/**
+	 * updateHighScore is called only if the player has achieved a score that
+	 * exceeds the score residing in score.txt, In this case score.txt will be
+	 * truncated and the new highscore will be written.
+	 * 
+	 * @param currentPlayerScore  The players final score
+	 * @throws FileNotFoundException
+	 */
 	void updateHighScore(int currentPlayerScore) throws FileNotFoundException {
 		PrintWriter fileWriter = new PrintWriter("score.txt");
 		fileWriter.print("");
@@ -68,7 +91,11 @@ public class ResultController {
 		fileWriter.close();
 	}
 
-	// Back to main menu
+	/**
+	 * Restart loads the player back to the main menu in Main.fxml
+	 * @param event
+	 * @throws IOException
+	 */
 	@FXML
 	void Restart(ActionEvent event) throws IOException {
 		BorderPane root = (BorderPane) FXMLLoader.load(getClass().getResource("Main.fxml"));
@@ -76,7 +103,11 @@ public class ResultController {
 		Main.primaryStage.setScene(scene);
 	}
 
-	// Exit the application.
+	/**
+	 * Exit, exits the application.
+	 * @param event
+	 * @throws IOException
+	 */
 	@FXML
 	void Exit(ActionEvent event) throws IOException {
 		Stage stage = (Stage) ExitButton.getScene().getWindow();
