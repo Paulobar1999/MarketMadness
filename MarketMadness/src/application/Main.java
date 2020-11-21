@@ -9,8 +9,14 @@ import javafx.fxml.FXMLLoader;
 
 public class Main extends Application {
 
+	/**
+	 * the current stage being displayed
+	 */
 	public static Stage primaryStage;
 
+	/**
+	 * start, starts the program, setting the icon, primaryStage, Title, and launches the main menu  
+	 */
 	@Override
 	public void start(Stage primaryStage) {
 		try {
