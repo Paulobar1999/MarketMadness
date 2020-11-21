@@ -7,9 +7,22 @@ import javafx.scene.text.Text;
 
 public class PlayerData {
 
+	/**
+	 * heldMap holds a stock name and the quantity of the stock the play owns 
+	 */
 	static HashMap<String, Integer> heldMap = new HashMap<String, Integer>();
+	
+	/**
+	 * Player cash
+	 */
 	static int cash = 0;
 
+	/**
+	 * initilizePlayerData Is called at the start of a game, It sets the players
+	 * cash to initalCash and sets all the players holding in all stocks to zero.
+	 * @see setStockOwned();
+	 * @param initalCash
+	 */
 	public static void initilizePlayerData(int initalCash) {
 		cash = initalCash;
 		setStockOwned("Red", 0);
@@ -18,10 +31,23 @@ public class PlayerData {
 
 	}
 
+	/**
+	 * tabulateHeldStockValue Takes a stock name and multiplies the players held
+	 * quantity of the stock by the stocks current price.
+	 * 
+	 * @param stock Name of Stock
+	 * @return Stock value multiplied by quantity of stock held
+	 */
 	public static int tabulateHeldStockValue(String stock) {
 		return heldMap.get(stock) * GraphMaster.curPrice(stock, GraphMaster.curDay - 1);
 	}
 
+	/**
+	 * tabulateAbsoluteTotal returns the players total cash added with the value of
+	 * all currently held stocks, resulting in an absolute total of assets.
+	 * @see GraphMaster.curPrice();
+	 * @return absolute total of all assets, cash and stock
+	 */
 	public static int tabulateAbsoluteTotal() {
 		int total = cash;
 		for (String stock : heldMap.keySet()) {
@@ -30,6 +56,13 @@ public class PlayerData {
 		return total;
 	}
 
+	/**
+	 * tabulateTotalStockValue returns the players total value of all currently held
+	 * stocks.
+	 * 
+	 * @see GraphMaster.curPrice();
+	 * @return total of all held stocks
+	 */
 	public static int tabulateTotalStockValue() {
 		int total = 0;
 		for (String stock : heldMap.keySet()) {
@@ -38,7 +71,13 @@ public class PlayerData {
 		return total;
 	}
 
-	// sets the number of a specific stock a player owns
+	/**
+	 * setStockOwned sets the quantity of stock a player owns. It intakes a stock
+	 * name and an amount to set the held value to.
+	 * 
+	 * @param stock Name of stock 
+	 * @param amount Quantity of stock
+	 */
 	public static void setStockOwned(String stock, int amount) {
 
 		if (heldMap.containsKey(stock))
@@ -48,15 +87,20 @@ public class PlayerData {
 
 	}
 
-	// Increments the number of a specific stock a player owns
+	/**
+	 * incrementStock increments the held quantity of a given stock by one.
+	 * @param stock Name of stock
+	 */
 	public static void incrementStock(String stock) {
-
 		if (heldMap.containsKey(stock))
 			heldMap.put(stock, heldMap.get(stock) + 1);
-
 	}
 
-	// Decrements the number of a specific stock a player owns
+	/**
+	 * decrementStock decrements the held quantity of a given stock by one.
+	 * 
+	 * @param stock Name of stock
+	 */
 	public static void decrementStock(String stock) {
 
 		if (heldMap.containsKey(stock))
@@ -64,7 +108,13 @@ public class PlayerData {
 
 	}
 
-	// gets the number of a specific stock a player owns
+	/**
+	 * getStockOwned returns the quantity (int) of held stock a player owns. Will
+	 * return -1 if the provided stock is not found within heldMap.
+	 * 
+	 * @param stock Name of stock
+	 * @return Quantity of stock
+	 */
 	public static int getStockOwned(String stock) {
 		if (heldMap.containsKey(stock))
 			return heldMap.get(stock);
@@ -72,6 +122,15 @@ public class PlayerData {
 			return -1;
 	}
 
+	/**
+	 * BuyStock checks if a player has the necessary funds to purchase a given
+	 * stock, If they do the stock held quantity will be incremented and the price
+	 * of the stock deducted from the players cash reserves.
+	 * 
+	 * @param textMap Map of all text elements in GameController
+	 * @param buttonMap Map of all button elements in GameController
+	 * @param stock Name of stock
+	 */
 	public static void BuyStock(HashMap<String, Text> textMap, HashMap<String, Button> buttonMap, String stock) {
 
 		if (GraphMaster.curPrice(stock, GraphMaster.curDay - 1) <= PlayerData.cash) {
@@ -83,25 +142,37 @@ public class PlayerData {
 		}
 	}
 
+	/**
+	 * SellStock first checks if the player currently holds the stock in question,
+	 * if they do hold at least 1 they are able to sell it, deducting the held value
+	 * of the stock and adding its value to the players cash reserves.
+	 * 
+	 * @param textMap  Map of all text elements in GameController
+	 * @param buttonMap Map of all button elements in GameController
+	 * @param stock Name of Stock
+	 */
 	public static void SellStock(HashMap<String, Text> textMap, HashMap<String, Button> buttonMap, String stock) {
 		if (PlayerData.heldMap.get(stock) > 0) {
-			// add price to cash
 			PlayerData.cash = PlayerData.cash + GraphMaster.curPrice(stock, GraphMaster.curDay - 1);
-			// increment users held stock
 			PlayerData.decrementStock(stock);
 			UpdateText(textMap, stock);
 		}
 	}
 
-	// Updates Stock Text
+	/**
+	 * UpdateText is called once a stock has been bought or sold, it updates display
+	 * text on the game screen.
+	 * 
+	 * @param textMap Map of all text elements in GameController
+	 * @param stock Name of Stock
+	 */
 	public static void UpdateText(HashMap<String, Text> textMap, String stock) {
 		// update absolute total text, update stock total text, update total cash
-
 		textMap.get("AbsTotal").setText("$" + PlayerData.tabulateAbsoluteTotal());
 		textMap.get("StockTotal").setText("$" + PlayerData.tabulateTotalStockValue());
 		textMap.get("CashTotal").setText("$" + PlayerData.cash);
 
-		// update aplicable stock text
+		// update applicable stock text
 		if (stock.equals("Red")) {
 			textMap.get("RedSO").setText(PlayerData.getStockOwned(stock) + "");
 			textMap.get("RedOV").setText("$" + PlayerData.tabulateHeldStockValue(stock));
