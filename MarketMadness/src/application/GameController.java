@@ -85,7 +85,7 @@ public class GameController {
 	 * maps are filled, the GraphMaster class is called to start the game. Once the
 	 * stocks are loaded with GraphMaster.GameStart() we will have to call
 	 * paintGraph to display the starting values of the graphs.
-	 * @return Nothing.
+	 * 
 	 * @see GraphMaster.GameStart();
 	 * @see paintGraph();
 	 */
@@ -95,7 +95,6 @@ public class GameController {
 		// LineChart.setCreateSymbols(false);
 		LineChart.getXAxis().setOpacity(.2);
 		LineChart.getYAxis().setOpacity(.5);
-		// redBox.setStyle("-fx-background-color: #ffbebd;");
 
 		// Add all text to Text Map
 		String[] textNames = { "RedMV", "GreenMV", "YellowMV", "daycount", "RedSO", "GreenSO", "YellowSO", "RedOV",
@@ -121,7 +120,6 @@ public class GameController {
 	 * The Bankruptcy method is essentially a quit button. In the event a game becomes
 	 * unwinnable the user can decide to return to the main menu via this method.
 	 * 
-	 * @return Nothing.
 	 * @param event
 	 * @throws IOException
 	 */
@@ -148,7 +146,6 @@ public class GameController {
 	 * 
 	 * @see getUserController.initializeResults();
 	 * @param event
-	 * @param absTotalText The Text element displaying the total cash and stock combined
 	 * @throws IOException
 	 */
 	@FXML
@@ -171,8 +168,6 @@ public class GameController {
 	 * 
 	 * @see PlayerData.BuyStock();
 	 * @param event must be a button named {STOCKNAME}Buy
-	 * @param textMap The Hashmap containing all text elements
-	 * @param buttonMap The Hashmap containing all button elements
 	 */
 	@FXML
 	void BuyStock(ActionEvent event) {
@@ -187,9 +182,7 @@ public class GameController {
 	 * to the PlayerData.SellStock method.
 	 * 
 	 * @see PlayerData.SellStock();
-	 * @param event must be a button named {STOCKNAME}Buy
-	 * @param textMap The Hashmap containing all text elements
-	 * @param buttonMap The Hashmap containing all button elements
+	 * @param event must be a button named {STOCKNAME}Sell
 	 */
 	@FXML
 	void SellStock(ActionEvent event) {
