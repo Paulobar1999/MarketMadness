@@ -21,7 +21,11 @@ public class MainController {
 	@FXML
 	private Button ExitButton;
 
-
+	/**
+	 * GameStart switches the scene to Game.fxml
+	 * @param event
+	 * @throws IOException
+	 */
 	@FXML
 	void GameStart(ActionEvent event) throws IOException {
 		BorderPane root = (BorderPane) FXMLLoader.load(getClass().getResource("Game.fxml"));
@@ -30,7 +34,11 @@ public class MainController {
 		Main.primaryStage.setScene(scene);
 	}
 
-
+	/**
+	 * GoToCredits switches the scene to Credits.fxml
+	 * @param event
+	 * @throws IOException
+	 */
 	@FXML
 	void GoToCredits(ActionEvent event) throws IOException {
 		// get 'Credits' button to work.
@@ -40,7 +48,11 @@ public class MainController {
 
 		Main.primaryStage.setScene(scene);
 	}
-
+	/**
+	 * BackToMainMenu returns the player to the Main.fxml
+	 * @param event
+	 * @throws IOException
+	 */
 	@FXML
 	void BackToMainMenu(ActionEvent event) throws IOException {
 		BorderPane root = (BorderPane) FXMLLoader.load(getClass().getResource("Main.fxml"));
@@ -48,16 +60,15 @@ public class MainController {
 		scene.getStylesheets().add(getClass().getResource("Main.css").toExternalForm());
 		Main.primaryStage.setScene(scene);
 	}
-
+	/**
+	 *  Exit, exits the application.
+	 * @param event
+	 * @throws IOException
+	 */
 	@FXML
 	void Exit(ActionEvent event) throws IOException {
 		Stage stage = (Stage) ExitButton.getScene().getWindow();
 		stage.close();
-	}
-
-	@FXML
-	void handle(ActionEvent event) {
-
 	}
 
 }
