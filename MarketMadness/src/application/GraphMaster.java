@@ -10,11 +10,29 @@ import javafx.scene.text.Text;
 
 public class GraphMaster {
 
+	/**
+	 * MapMap is a Hashmap containing a String, the stock name, and a secondary
+	 * HashMap of Integers(Day value) and Integers(Stock Value)
+	 */
 	static HashMap<String, HashMap<Integer, Integer>> MapMap = new HashMap<String, HashMap<Integer, Integer>>();
+	/**
+	 * CurDay and endDay are used to increment and display the current day value
+	 */
 	static int curDay;
 	static int endDay;
-	
-	
+
+	/**
+	 * The GameStart method initializes the curDay and endDay value, as well as
+	 * filling all three stock with ALL their values by calling masterGen. The
+	 * PlayerData is also called to initlize the players starting cash.
+	 * 
+	 * @param curDay the Integer value of the current day
+	 * @param endDay the Integer value of the days left
+	 * @param MapMap a Map that contains a Stock name, and a secondary HashMap that
+	 *               has the day value and the stock value, both Integers.
+	 * @see masterGen();
+	 * @see PlayerData.initilizePlayerData();
+	 */
 	public static void GameStart() {
 		// Day values
 		curDay = 1;
@@ -27,10 +45,28 @@ public class GraphMaster {
 		MapMap.put("Green", masterGen(5, 100, 3));
 	}
 
+	/**
+	 * getCurDay returns the current day value
+	 * 
+	 * @return curDay Current day value
+	 */
 	public static int getCurDay() {
 		return curDay;
 	}
 
+	/**
+	 * ProgressDay Cleans off the LineChart and proceeds to redraw all graphs one
+	 * day in advance, giving the appearance that new data has been generated when
+	 * in reality we are just showing more of each stocks already plotted graphs.
+	 * Along with this the method updates all UI elements with their current prices.
+	 * Eventually this method will trigger the 'end of game' where all buttons are
+	 * disabled other than 'RESULTS'.
+	 * 
+	 * @param LineChart The Linechart to display the graph on
+	 * @param uiMap     TextMap including all Text elements from GameController.java
+	 * @param buttonMap ButtonMap including all Button elements from
+	 *                  GameController.java
+	 */
 	@SuppressWarnings("unchecked")
 	public static void progressDay(LineChart<?, ?> LineChart, HashMap<String, Text> uiMap,
 			HashMap<String, Button> buttonMap) {
@@ -89,11 +125,22 @@ public class GraphMaster {
 		}
 	}
 
+	/**
+	 * Calculates How many days are left
+	 * 
+	 * @return Days left (endDay - curDay)
+	 */
 	public static int getEndDay() {
 		return endDay - curDay;
 	}
 
-	//// RETURN PART OF MAP AS SERIES
+	/**
+	 * Part returns up to a day of stock values as a XYChart Series.
+	 * 
+	 * @param stock Name of stock
+	 * @param day   Current day value
+	 * @return XYChart.Series X = Day value Y = Stock Value at Day
+	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public static XYChart.Series Part(String stock, int day) {
 		HashMap<Integer, Integer> masterMap = null;
@@ -106,7 +153,22 @@ public class GraphMaster {
 		return seriesSet;
 	}
 
-	//// MAP GEN
+	/**
+	 * masterGen is the formulation method for all values in the stock. It takes in
+	 * an int variance, an int, inital value and a cashMultiplier. The method
+	 * returns a HashMap of Intergers (Day) and Intergers (stock value). The Size of
+	 * the Map is set via the endDay integer. Within the while loop there is a
+	 * safeguard eliminates all zero values, as they would break the gameplay. Each
+	 * walk through the while loop randomly generates a calculatedVariance which has
+	 * a chance to be negative or positive causing the stock to dive or rise.
+	 * 
+	 * @param variance       an integer that determines the likely hood of the value
+	 *                       of a stock to change day by day
+	 * @param inital         an integer that sets the starting value of the stock
+	 * @param cashMultiplier an integer that multiplies the stocks value, ie making
+	 *                       them more sporadic
+	 * @return HashMap of Integers(Day) and Integers (Stock Value)
+	 */
 	public static HashMap<Integer, Integer> masterGen(int variance, int inital, int cashMultiplier) {
 		HashMap<Integer, Integer> masterMap = new HashMap<Integer, Integer>();
 		int Size = endDay;
@@ -123,7 +185,13 @@ public class GraphMaster {
 		return masterMap;
 	}
 
-	//// RETURN PRICE OF STOCK
+	/**
+	 * curPrice returns the stock value at a given day.
+	 * 
+	 * @param stock valid stock name 
+	 * @param day valid day value
+	 * @return current price of stock
+	 */
 	public static int curPrice(String stock, int day) {
 		if (MapMap.containsKey(stock))
 			return MapMap.get(stock).get(day);
