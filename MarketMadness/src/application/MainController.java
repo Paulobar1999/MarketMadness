@@ -1,5 +1,4 @@
 package application;
-
 import java.io.IOException;
 
 import javafx.event.ActionEvent;
@@ -11,7 +10,30 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-
+/**
+ * @author Paul O'Bar, Julian Negrete, Gideon Reyes, Tinesha Johnson, Stephen Otten
+ * @version 1.0.0 Build 1 November 20, 2020.
+ *
+ *  <h1>Program MainController Description</h1><br>
+ *
+ *  Usage :% java MainController <br><br>
+ *
+ *	This program manipulates the Main Menu of the Market Madness application. It has buttons that will navigate to the start
+ *	of the game, the credits screen, and the exit button to exit the game. <br><br>
+ *
+ *	<h1>ALGORITHM:</h1>
+ *	GameStart() <br>
+ *	Switches the scene to Game.fxml<br><br>
+ *
+ *	GoToCredits() <br>
+ *	Switches the scene to Credits.fxml<br><br>
+ *
+ *	BackToMainMenu() <br>
+ *	Returns the player to the Main.fxml<br><br>
+ *
+ *	Exit() <br>
+ *	Exits the application<br>
+ */
 public class MainController {
 
 	@FXML

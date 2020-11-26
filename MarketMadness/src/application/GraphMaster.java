@@ -1,5 +1,4 @@
 package application;
-
 import java.util.HashMap;
 
 import javafx.scene.chart.LineChart;
@@ -7,7 +6,70 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.chart.XYChart.Data;
 import javafx.scene.control.Button;
 import javafx.scene.text.Text;
-
+/**
+ * @author Paul O'Bar, Julian Negrete, Gideon Reyes, Tinesha Johnson, Stephen Otten
+ * @version 1.0.0 Build 1 November 20, 2020.
+ *
+ *  <h1>Program GraphMaster Description</h1><br>
+ *
+ *  Usage :% java GraphMaster <br><br>
+ *
+ *	This program manipulates the stock market graph of the Market Madness application. This program implements a stock
+ *	algorithm and formats a graph to display the information. It has a set number of "days" the game will run, and this
+ *	program keeps track of the current day, when to move on to the next day, and when the last day of the stock game will
+ *	be. It also shows the prices of the stocks for any given day. <br><br>
+ *
+ *	<h1>ALGORITHM:</h1>
+ * 	Create MapMap as a Hashmap containing a String, the stock name, and a secondary HashMap of Integers(Day value) and
+ * 	Integers(Stock Value)<br>
+ *	Create CurDay and endDay which are used to increment and display the current day value<br><br>
+ *
+ *	GameStart()<br>
+ *	Initializes the curDay and endDay value, as well as filling all three stock with ALL their values by calling masterGen<br>
+ *	The PlayerData is also called to initlize the players starting cash<br>
+ *	Initialize Player data with starting cash<br>
+ *	Add and Generate maps<br><br>
+ *
+ *	getCurDay() <br>
+ *	Returns the current day value<br>
+ *
+ *	ProgressDay() <br>
+ *	Cleans off the LineChart and proceeds to redraw all graphs one day in advance, giving the appearance that new data has
+ *	been generated when in reality we are just showing more of each stocks already plotted graphs<br>
+ *	The method updates all UI elements with their current prices<br>
+ *	Will trigger the 'end of game' where all buttons are disabled other than 'RESULTS'<br>
+ *	IncrementDay value<br>
+ *	Style<br>
+ *	Clean Last Graph<br>
+ *	Add series<br>
+ *	Tabulate absolute total text<br>
+ *	Tabulate stock total text<br>
+ *	Tabulate total cash<br>
+ *	Tabulate and post amount of held stock<br>
+ *	Tabulate and post the value of your held stock<br>
+ *	Post All Market Values<br>
+ *	Change Days left<br>
+ *	Disable next button, End of game<br><br>
+ *
+ *	getEndDay()<br>
+ *	Calculates How many days are left<br><br>
+ *
+ *	Part() <br>
+ *	Returns up to a day of stock values as a XYChart Series<br><br>
+ *
+ *	masterGen() <br>
+ *	The formulation method for all values in the stock<br>
+ *	Takes in an int variance, an int, inital value and a cashMultiplier <br>
+ *	Returns a HashMap of Intergers (Day) and Intergers (stock value)<br>
+ *	The Size of the Map is set via the endDay integer<br>
+ *	Within the while loop there is a safeguard eliminates all zero values, as they would break the gameplay<br>
+ *	Each walk through the while loop randomly generates a calculatedVariance which has a chance to be negative or positive
+ *	causing the stock to dive or rise<br>
+ *	Implement stock Algorithm<br><br>
+ *
+ *	curPrice() <br>
+ *	Returns the stock value at a given day<br>
+ */
 public class GraphMaster {
 
 	/**
@@ -25,7 +87,7 @@ public class GraphMaster {
 	 * The GameStart method initializes the curDay and endDay value, as well as
 	 * filling all three stock with ALL their values by calling masterGen. The
 	 * PlayerData is also called to initlize the players starting cash.
-	 * 
+	 *
 	 * @param curDay the Integer value of the current day
 	 * @param endDay the Integer value of the days left
 	 * @param MapMap a Map that contains a Stock name, and a secondary HashMap that
@@ -47,7 +109,7 @@ public class GraphMaster {
 
 	/**
 	 * getCurDay returns the current day value
-	 * 
+	 *
 	 * @return curDay Current day value
 	 */
 	public static int getCurDay() {
@@ -61,7 +123,7 @@ public class GraphMaster {
 	 * Along with this the method updates all UI elements with their current prices.
 	 * Eventually this method will trigger the 'end of game' where all buttons are
 	 * disabled other than 'RESULTS'.
-	 * 
+	 *
 	 * @param LineChart The Linechart to display the graph on
 	 * @param uiMap     TextMap including all Text elements from GameController.java
 	 * @param buttonMap ButtonMap including all Button elements from
@@ -127,7 +189,7 @@ public class GraphMaster {
 
 	/**
 	 * Calculates How many days are left
-	 * 
+	 *
 	 * @return Days left (endDay - curDay)
 	 */
 	public static int getEndDay() {
@@ -136,7 +198,7 @@ public class GraphMaster {
 
 	/**
 	 * Part returns up to a day of stock values as a XYChart Series.
-	 * 
+	 *
 	 * @param stock Name of stock
 	 * @param day   Current day value
 	 * @return XYChart.Series X = Day value Y = Stock Value at Day
@@ -161,7 +223,7 @@ public class GraphMaster {
 	 * safeguard eliminates all zero values, as they would break the gameplay. Each
 	 * walk through the while loop randomly generates a calculatedVariance which has
 	 * a chance to be negative or positive causing the stock to dive or rise.
-	 * 
+	 *
 	 * @param variance       an integer that determines the likely hood of the value
 	 *                       of a stock to change day by day
 	 * @param inital         an integer that sets the starting value of the stock
@@ -187,8 +249,8 @@ public class GraphMaster {
 
 	/**
 	 * curPrice returns the stock value at a given day.
-	 * 
-	 * @param stock valid stock name 
+	 *
+	 * @param stock valid stock name
 	 * @param day valid day value
 	 * @return current price of stock
 	 */

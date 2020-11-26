@@ -1,5 +1,4 @@
 package application;
-
 import java.io.IOException;
 import java.util.HashMap;
 
@@ -15,7 +14,52 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-
+/**
+ * @author Paul O'Bar, Julian Negrete, Gideon Reyes, Tinesha Johnson, Stephen Otten
+ * @version 1.0.0 Build 1 November 20, 2020.
+ *
+ *  <h1>Program GameController Description</h1><br>
+ *
+ *  Usage :% java GameController <br><br>
+ *
+ *	This program manipulates the Game screen of the Market Madness application. It serves as initialization to the game
+ *	as well as create a Bankruptcy button, progresses the stock graph, calls the buy and sell stock methods from PlayerData,
+ *	and sends the user to the result screen once the game has ended.<br><br>
+ *
+ *	<h1>ALGORITHM:</h1>
+ * 	The textMap holds all text elements of the Game.fxml file <br>
+ *	The buttonMap holds all button elements of the Game.fxml file<br><br>
+ *
+ *	initialize() <br>
+ *	Fills the textMap and buttonMap with String references to their respective Text and Button variables<br>
+ *	It does this through declaring a Name array of Strings and an array of Text/button elements<br>
+ *	After both these maps are filled, the GraphMaster class is called to start the game<br>
+ *	Once the stocks are loaded with GraphMaster.GameStart(), we will have to call paintGraph to display
+ *	the starting values of the graphs <br>
+ *	Style<br>
+ *	Add all text to Text Map<br>
+ *	Add all buttons to Button Map<br><br>
+ *
+ *	Bankruptcy() <br>
+ *	Essentially a quit button <br>
+ *	In the event a game becomes unwinnable, the user can decide to return to the main menu via this method<br><br>
+ *
+ *	paintGraph()<br>
+ *	Used to progress the graph and display the next days information<br><br>
+ *
+ *	EndScreen() <br>
+ *	Called once the game has ended and the user has no choice other than to continue to the results screen<br>
+ *	The method loads the ResultScreen.fxml, as well as passes the players 'score' to initializeResults<br>
+ *	Put 'css' file for results screen here, if at all needed<br><br>
+ *
+ *	BuyStock() <br>
+ *	Parses a portion of the button that calls its name to extract the name of the stock (i.e. "RedBuy" will be parsed to "Red", and passed
+ *	to the PlayerData.BuyStock method)<br><br>
+ *
+ *	SellStock() <br>
+ *	Parses a portion of the button that calls its name to extract the name of the stock (i.e. "RedSell" will be parsed to
+ *	"Red", and passed to the PlayerData.SellStock method)<br>
+ */
 public class GameController {
 
 	@FXML
@@ -85,7 +129,7 @@ public class GameController {
 	 * maps are filled, the GraphMaster class is called to start the game. Once the
 	 * stocks are loaded with GraphMaster.GameStart() we will have to call
 	 * paintGraph to display the starting values of the graphs.
-	 * 
+	 *
 	 * @see GraphMaster.GameStart();
 	 * @see paintGraph();
 	 */
@@ -119,7 +163,7 @@ public class GameController {
 	/**
 	 * The Bankruptcy method is essentially a quit button. In the event a game becomes
 	 * unwinnable the user can decide to return to the main menu via this method.
-	 * 
+	 *
 	 * @param event
 	 * @throws IOException
 	 */
@@ -143,7 +187,7 @@ public class GameController {
 	 * The EndScreen method is called once the game has ended and the user has no
 	 * choice other than to continue to the results screen. The method Loads the
 	 * ResultScreen.fxml, As well as passes the players 'score' to initializeResults
-	 * 
+	 *
 	 * @see getUserController.initializeResults();
 	 * @param event
 	 * @throws IOException
@@ -165,7 +209,7 @@ public class GameController {
 	 * The BuyStock method parses a portion of the button that call to its' name to
 	 * extract the name of the stock ie "RedBuy" will be parsed to "Red", and passed
 	 * to the PlayerData.BuyStock method.
-	 * 
+	 *
 	 * @see PlayerData.BuyStock();
 	 * @param event must be a button named {STOCKNAME}Buy
 	 */
@@ -180,7 +224,7 @@ public class GameController {
 	 * The SellStock method parses a portion of the button that call to its' name to
 	 * extract the name of the stock ie "RedSell" will be parsed to "Red", and passed
 	 * to the PlayerData.SellStock method.
-	 * 
+	 *
 	 * @see PlayerData.SellStock();
 	 * @param event must be a button named {STOCKNAME}Sell
 	 */
