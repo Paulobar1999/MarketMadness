@@ -34,7 +34,7 @@ Each round you will have a chance to purchase information on the next days stock
 # Installation
 **Requirements**
 
-To install MarketMadness all you need is a compatible version of Java, jre1.8.0_221 or newer, and a version of JavaFX installed into your IDE of choice. We recommend eclipse neon if you wish to skip some of the more tedious installation. If you'd like to edit or view any of our FXML files you can do so with a scene builder installed. 
+To install MarketMadness all you need is a compatible version of Java, (Java 8, jre1.8.0_221) or newer, and a version of JavaFX installed into your IDE of choice. We recommend eclipse neon if you wish to skip some of the more tedious installation. If you'd like to edit or view any of our FXML files you can do so with SceneBuilder ( 3 or above ) installed. 
 
 **Importing** 
 
