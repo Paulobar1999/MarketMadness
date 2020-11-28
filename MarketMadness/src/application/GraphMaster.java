@@ -256,7 +256,7 @@ public class GraphMaster {
 	 */
 	public static int curPrice(String stock, int day) {
 		if (MapMap.containsKey(stock))
-			return MapMap.get(stock).get(day);
+			return MapMap.get(stock).get(day-1);
 		return -1;
 	}
 
