@@ -1,6 +1,11 @@
 # What is MarketMadness?
 
-MarketMadness is a stock market simulation game coded in Java utilizing JavaFX.
+MarketMadness was developed over the course of a month by the team, FormulaOne, consisting of:
+- Paul O'Bar 
+- Julian Negrete 
+- Gideon Reyes
+- Tinesha Johnson
+- Stephen Otten
 
 You can find a walkthrough and presentation [video here!](https://www.youtube.com/watch?v=1c-wKp5lYOU&t=3s)
 
