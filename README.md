@@ -1,12 +1,3 @@
-# MarketMadness
-
-Welcome to our GitHub, MarketMadness was developed over the course of a month by the team, FormulaOne, consisting of:
-- Paul O'Bar 
-- Julian Negrete 
-- Gideon Reyes
-- Tinesha Johnson
-- Stephen Otten
-
 # What is MarketMadness?
 
 MarketMadness is a stock market simulation game coded in Java utilizing JavaFX.
