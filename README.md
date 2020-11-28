@@ -12,7 +12,7 @@ Welcome to our GitHub, MarketMadness was developed over the course of a month by
 MarketMadness is a stock market simulation game coded in Java utilizing JavaFX.
 
 
-## Features
+# Features
 
 **Modern User Interface** 
 
@@ -50,7 +50,7 @@ Once installed simply navigate to Main.java inside of src, there you can click "
 
 
 
-## FAQ
+# FAQ
 
 **Q:** I am having errors launching the game via my IDE?
 
