@@ -2,6 +2,7 @@
 
 MarketMadness is a stock market simulation game coded in Java utilizing JavaFX.
 
+You can find a walkthrough and presentation [video here!](https://www.youtube.com/watch?v=1c-wKp5lYOU&t=3s)
 
 # Features
 
